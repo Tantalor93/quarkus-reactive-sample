@@ -25,7 +25,7 @@ public class HelloService {
 
 	public Uni<String> getHello() {
 		WebClient localhostClient = WebClient
-				.create(vertx, new WebClientOptions().setDefaultHost("localhost").setDefaultPort(8081));
+				.create(vertx, new WebClientOptions().setDefaultHost("localhost").setDefaultPort(8888));
 
 		LOGGER.info("service call");
 
@@ -60,7 +60,7 @@ public class HelloService {
 	private String sleep() {
 		LOGGER.info("doing sleep");
 		try {
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.MILLISECONDS.sleep(50);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
