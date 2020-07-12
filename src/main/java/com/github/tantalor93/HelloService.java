@@ -34,6 +34,12 @@ public class HelloService {
 					.produceUni(e -> applyBlockingSleep())
 				.onItem()
 					.produceUni(e -> callWebStub(localhostClient));
+		// nebo
+		/*
+			return callWebStub(localhostClient)
+				.flatMap(e -> applyBlockingSleep())
+				.flatMap(e -> callWebStub(localhostClient));
+		 */
 	}
 
 	private Uni<String> callWebStub(WebClient localhostClient) {
